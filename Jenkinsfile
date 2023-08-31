@@ -6,5 +6,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('runing pwershell command'){
+        steps{
+        bat 'dir'
+        }
+        }
     }
 }
