@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters{
     choice(name:'Branch_Name',choices:['master','sample'],description:'giving the branch choice')
-    string(name:'user name',defaultvalues:'yusha', description:'asking the user name')
+    string(name:'user name', defaultvalues:'yusha', description:'asking the user name')
     }
     stages{
         stage('hello world'){
