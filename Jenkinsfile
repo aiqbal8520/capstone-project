@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    parameters{
+    choice(name:'Branch_Name',choices:['master','sample'],description:'giving the branch choice')
+    string(name:'user name',defaultvalues:'yusha', description:'asking the user name')
+    }
     stages{
         stage('hello world'){
             steps{
@@ -18,7 +22,7 @@ pipeline {
         }
         }
         steps{
-           git branch: 'sample', credentialsId: 'capstone', url: 'https://github.com/aiqbal8520/capstone-project.git'
+           git branch: '$Branch_Name', credentialsId: 'capstone', url: 'https://github.com/aiqbal8520/capstone-project.git'
         }
         }
     }
